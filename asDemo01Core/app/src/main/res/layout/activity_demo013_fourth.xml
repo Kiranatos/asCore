@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Demo013FourthActivity">
+
+    <TextView
+        android:id="@+id/textViewFromFourthActivityDemo013"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:minHeight="32dp"
+        android:text="@string/text_view_from_fourth_activity_demo_013"
+        android:textAlignment="center"
+        android:textSize="16sp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintVertical_bias="0.03" />
+
+    <EditText
+        android:id="@+id/editTextFromFourthActivityDemo013"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:autofillHints=""
+        android:ems="10"
+        android:hint="@string/edit_text_from_fourth_activity_demo_013"
+        android:inputType="text"
+        android:minHeight="48dp"
+        android:textColorHint="#546E7A"
+        app:layout_constraintTop_toBottomOf="@+id/textViewFromFourthActivityDemo013"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintVertical_bias="0.03" />
+
+    <Button
+        android:id="@+id/buttonFromFourthActivityDemo013"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/button_from_fourth_activity_demo_013"
+        android:onClick="onClickSendCommentButtonDemo013FourthActivity"
+        app:layout_constraintTop_toBottomOf="@+id/editTextFromFourthActivityDemo013"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintVertical_bias="0.03" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

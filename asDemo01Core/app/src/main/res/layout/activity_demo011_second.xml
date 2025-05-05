@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Demo011SecondActivity">
+
+    <TextView
+        android:id="@+id/textViewFrom2ndActivityDemo011"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:minHeight="32dp"
+        android:text="@string/text_view_2nd_act_demo_011"
+        android:textAlignment="center"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Spinner
+        android:id="@+id/spinnerListOfAnimeFrom2ndActivityDemo011"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:entries="@array/list_of_anime"
+        android:minHeight="48dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewFrom2ndActivityDemo011" />
+
+    <!-- ALT+Enter on showDescriptionFrom2ndActivityDemo011 to create method in Demo011SecondActivity -->
+    <Button
+        android:id="@+id/buttonShowAnimeDescriptionFrom2ndActivityDemo011"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:onClick="showDescriptionFrom2ndActivityDemo011"
+        android:text="@string/button_show_description"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/spinnerListOfAnimeFrom2ndActivityDemo011" />
+
+    <TextView
+        android:id="@+id/textViewAnimeDescriptionFrom2ndActivityDemo011"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonShowAnimeDescriptionFrom2ndActivityDemo011" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

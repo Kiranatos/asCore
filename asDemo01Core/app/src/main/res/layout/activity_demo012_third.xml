@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Demo012ThirdActivity">
+
+    <EditText
+        android:id="@+id/editTextFromThirdActivityDemo012"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:autofillHints=""
+        android:ems="10"
+        android:hint="@string/edit_text_demo012"
+        android:inputType="text"
+        android:minHeight="55dp"
+        android:textColorHint="#546E7A"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"     />
+
+    <!-- ALT+Enter on onClickAddCommentButtonDemo012ThirdActivity to create new method -->
+    <Button
+        android:id="@+id/buttonAddCommentDemo02"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/button_add_comment_name_demo012"
+        android:onClick="onClickAddCommentButtonDemo012ThirdActivity"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextFromThirdActivityDemo012" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+<!-- from GPT, didnt check.
+
+    android:autofillHints="" - Підказує Android, які дані можна автозаповнити в цьому полі (наприклад: ім'я, email, пароль тощо).
+    "" означає, що немає підказки для автозаповнення. Тобто Android не буде намагатися автоматично підставити якісь дані в це поле.
+    Приклад з автозаповненням: android:autofillHints="emailAddress"
+
+    android:ems="10" - ems визначає ширину поля EditText у кількості символів середньої ширини (em = width of ‘M’ character).
+    android:ems="10" означає, що поле буде приблизно на 10 символів по ширині, незалежно від фактичного тексту. Але у тебе layout_width="0dp" з ConstraintLayout,
+    тому ems тут може не вплинути, бо ширина задається обмеженнями (constraintStart_toStartOf і constraintEnd_toEndOf).
+
+    android:inputType="text" - Вказує, який тип вводу дозволений у цьому полі. Це впливає як на клавіатуру, так і на поведінку поля.
+    inputType="text" означає, що це звичайне текстове поле, без спеціальних обмежень (не числове, не пароль, не email тощо).
+    Інші приклади: inputType="textEmailAddress" – покаже email-клавіатуру, inputType="number" – лише цифри, inputType="textPassword" – приховує введений текст.
+-->
