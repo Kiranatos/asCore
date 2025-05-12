@@ -6,6 +6,11 @@ Summary of Android language
                 AndroidManifest.xml
 2) asDemo02ImageAnimation : 
      Look files: MainActivity.java > activity_main.xml
+3) asDemo03Video :
+   Look files: MainActivity.java > activity_main.xml > AndroidManifest.xml
+3) asDemo04Audio :
+   Look files: MainActivity.java > activity_main.xml > AndroidManifest.xml
+ 
 
 How to rename project: 
     - rename folder
