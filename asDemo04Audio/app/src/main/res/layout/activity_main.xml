@@ -2,17 +2,77 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:background="@drawable/background"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <TextView
+    <!-- Добавив наступні файли з кусового проекту:
+    1) drawable/background.jpg вставляється тут вище в рядку : android:background="@drawable/background"
+    2-3) растові зображення drawable/circle.xml та drawable/ic_queue_music_blue_24dp.xml вставляється тут
+    нижче в тегах ImageView. Не відредаговане пояснення від ГПТ, збережено також в "GPT answers.odt"
+    4) drawable/raw/stuff.mp3 вставляється в MainActivity.java
+    5) drawable/values/styles.xml - не знаю, що робить, бо проект запускався і без цього файла перед цим.
+
+    в drawable/values/colors.xml добавлено 3 рядка, бо 1 з нових кольорів використовується в circle.xml
+    -->
+
+    <Button
+        android:id="@+id/playButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginStart="147dp"
+        android:layout_marginTop="202dp"
+        android:layout_marginEnd="149dp"
+        android:layout_marginBottom="51dp"
+        android:text="Play"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <SeekBar
+        android:id="@+id/volumeSeekBar"
+        android:layout_width="379dp"
+        android:layout_height="32dp"
+        android:layout_marginTop="29dp"
+        android:layout_marginBottom="50dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.6"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/playButton"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <ImageView
+        android:id="@+id/imageView1"
+        android:elevation="16dp"
+        android:translationZ="16dp"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginStart="162dp"
+        android:layout_marginTop="52dp"
+        android:layout_marginEnd="170dp"
+        android:layout_marginBottom="101dp"
+        app:layout_constraintBottom_toTopOf="@+id/playButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/circle" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:elevation="32dp"
+        android:translationZ="32dp"
+        android:layout_width="52dp"
+        android:layout_height="49dp"
+        android:layout_marginStart="162dp"
+        android:layout_marginTop="52dp"
+        android:layout_marginEnd="170dp"
+        android:layout_marginBottom="101dp"
+        app:layout_constraintBottom_toTopOf="@+id/playButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_queue_music_blue_24dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
