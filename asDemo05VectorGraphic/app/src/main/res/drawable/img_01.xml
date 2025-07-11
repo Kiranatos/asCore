@@ -1,0 +1,46 @@
+<vector
+    android:viewportHeight="24"
+    android:height="24dp"
+    android:viewportWidth="10"
+    android:width="24dp"
+    android:tint="#A823B1"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <path android:fillColor="@android:color/white"
+        android:pathData="M22,5.7l-4.6,-3.9 -1.3,1.5 4.6,3.9L22,5.7zM7.9,3.4L6.6,1.9 2,5.7l1.3,1.5 4.6,-3.8zM12.5,8L11,8v6l4.7,2.9 0.8,-1.2 -4,-2.4L12.5,8zM12,4c-5,0 -9,4 -9,9s4,9 9,9 9,-4 9,-9 -4,-9 -9,-9zM12,20c-3.9,0 -7,-3.1 -7,-7s3.1,-7 7,-7 7,3.1 7,7 -3.1,7 -7,7z"/>
+</vector>
+
+<!--
+    android:fillColor="@android:color/white" - основний колір фігури, але
+    він перекривається android:tint="#A823B1" фіолетовим.
+    Доказ: видали tint рядок.
+                        * * *
+    android:width та android:height — фізичний розмір, що буде займати drawable
+        - Це розміри, які відображаються на екрані (наприклад, 24dp x 24dp).
+        - ❗ Ці розміри можна змінювати ззовні, наприклад, через ImageView.
+        - ❗ Це НЕ пікселі, а density-independent pixels (dp).
+    android:viewportWidth і android:viewportHeight — віртуальне "полотно" (координатна система)
+        - Це внутрішня сітка координат, у якій ти малюєш лінії та фігури (через pathData).
+        - Умовно, це як "масштабований міліметровий папір", який буде розтягнутий на android:width і android:height.
+
+        Приклади:
+    android:viewportHeight="48"
+    android:height="96dp"
+    android:viewportWidth="48"
+    android:width="96dp"
+
+    android:viewportHeight="48"
+    android:height="24dp"
+    android:viewportWidth="48"
+    android:width="48dp"
+
+    android:viewportHeight="24"
+    android:height="24dp"
+    android:viewportWidth="24"
+    android:width="48dp"
+
+    android:viewportHeight="10"
+    android:height="24dp"
+    android:viewportWidth="10"
+    android:width="24dp"
+-->

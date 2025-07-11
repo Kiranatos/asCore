@@ -8,4 +8,11 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="MyToolbarStyle" parent="Widget.MaterialComponents.Toolbar">
+        <item name="titleTextColor">@color/c_violet</item>
+        <item name="android:background">@color/c_magenta</item> <!-- фон -->
+        <item name="subtitleTextColor">@color/c_blue</item> <!-- якщо є підзаголовок -->
+        <item name="android:elevation">4dp</item> <!-- тінь -->
+    </style>
+
 </resources>

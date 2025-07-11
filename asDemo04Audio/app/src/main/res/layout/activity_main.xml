@@ -7,13 +7,68 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+    <!-- How to show title of application.
+    ************************************ (1st variant) *********************************************
+
+    How to show title of application. (1st variant)
+    1. Дадати сюди в activity_main.xml тег
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/topAppBar"
+            android:layout_width="match_parent"
+            app:navigationIcon="@drawable/ic_skip_next_orange_24dp"
+            android:layout_height="?attr/actionBarSize"
+            app:layout_constraintTop_toTopOf="parent" />
+    2. Додати в MainActivity.java :
+        Toolbar toolbar = findViewById(R.id.topAppBar);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setTitle("My App ...");
+        toolbar.setTitleTextColor(Color.GREEN);                                     [відмінність]
+        getSupportActionBar().setBackgroundDrawable(new ColorDrawable(Color.parseColor("#FFEB3B")));
+    ************************************ (2nd variant) *********************************************
+    1. Дадати сюди в activity_main.xml тег
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/topAppBar"
+            style="@style/MyToolbarStyle"                                           [відмінність]
+            android:theme="@style/ThemeOverlay.MaterialComponents.Dark.ActionBar"   [відмінність]
+            app:title="My App [activity_main.xml]"                                  [відмінність]
+            app:navigationIcon="@drawable/ic_skip_next_orange_24dp"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            app:layout_constraintTop_toTopOf="parent" />
+    2. Додати в MainActivity.java :
+        Toolbar toolbar = findViewById(R.id.topAppBar);
+        setSupportActionBar(toolbar);
+     3. У res/values/themes.xml додати:
+            <item name="toolbarStyle">@style/MyToolbarStyle</item>
+      4. У res/values/styles.xml додати:
+            <style name="MyToolbarStyle" parent="Widget.MaterialComponents.Toolbar">
+                <item name="titleTextColor">@color/c_violet</item>
+                <item name="android:background">@color/c_magenta</item> - фон
+                <item name="subtitleTextColor">@color/c_blue</item> - якщо є підзаголовок
+                <item name="android:elevation">4dp</item> - тінь
+            </style>
+    ************************************ (3rd variant) *********************************************
+    Є ще варіант 3, але я заплутався і задовбався.
+    ************************************ (4th variant) *********************************************
+    Дивись в проекті asDemo06MusicPlayer в res/values/themes.xml
+    -->
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/topAppBar"
+        style="@style/MyToolbarStyle"
+        android:theme="@style/ThemeOverlay.MaterialComponents.Dark.ActionBar"
+        app:title="My App [activity_main.xml]"
+        app:navigationIcon="@drawable/ic_skip_next_orange_24dp"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <!-- Добавив наступні файли з кусового проекту:
     1) drawable/background.jpg вставляється тут вище в рядку : android:background="@drawable/background"
     2-3) растові зображення drawable/circle.xml та drawable/ic_queue_music_blue_24dp.xml вставляється тут
-    нижче в тегах ImageView. Не відредаговане пояснення від ГПТ, збережено також в "GPT answers.odt"
+    нижче в тегах ImageView. (Розширену інформацію про зображення дивись в наступному проекті)
     4) drawable/raw/stuff.mp3 вставляється в MainActivity.java
     5) drawable/values/styles.xml - не знаю, що робить, бо проект запускався і без цього файла перед цим.
-
+                    * * *
     в drawable/values/colors.xml добавлено 3 рядка, бо 1 з нових кольорів використовується в circle.xml
     -->
 
@@ -22,11 +77,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="147dp"
-        android:layout_marginTop="202dp"
+        android:layout_marginTop="340dp"
         android:layout_marginEnd="149dp"
-        android:layout_marginBottom="51dp"
         android:text="Play"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.518"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -45,34 +100,38 @@
 
     <ImageView
         android:id="@+id/imageView1"
-        android:elevation="16dp"
-        android:translationZ="16dp"
         android:layout_width="150dp"
         android:layout_height="150dp"
         android:layout_marginStart="162dp"
         android:layout_marginTop="52dp"
         android:layout_marginEnd="170dp"
         android:layout_marginBottom="101dp"
+        android:elevation="16dp"
+        android:translationZ="16dp"
         app:layout_constraintBottom_toTopOf="@+id/playButton"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.45"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0"
         app:srcCompat="@drawable/circle" />
 
     <ImageView
         android:id="@+id/imageView2"
-        android:elevation="32dp"
-        android:translationZ="32dp"
         android:layout_width="52dp"
         android:layout_height="49dp"
         android:layout_marginStart="162dp"
         android:layout_marginTop="52dp"
         android:layout_marginEnd="170dp"
         android:layout_marginBottom="101dp"
+        android:elevation="32dp"
+        android:translationZ="32dp"
         app:layout_constraintBottom_toTopOf="@+id/playButton"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.629"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.637"
         app:srcCompat="@drawable/ic_queue_music_blue_24dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

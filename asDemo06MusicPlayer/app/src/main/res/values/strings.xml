@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Ozo Music Player</string>
+    <string name="app_name_label">Music Player [strings.xml>AndroidManifest.xml]</string>
+</resources>

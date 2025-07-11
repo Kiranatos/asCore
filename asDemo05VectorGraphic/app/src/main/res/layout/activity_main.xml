@@ -1,0 +1,300 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@drawable/background"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <!--
+    === Векторні зображення ===
+    File/RMB on package drawable>New>"Image Asset"/"Vector Asset">обрати тип іконок>
+    обрати Clip Art(є різні пердустанвлені)>обрати імя файлу>з'явиться xml файл в drawable
+
+    як розмістити: додати ImageView(в режимі Design, а не Code) і відкриється вікно, де можна буде вибрати файли з пакету drawable
+
+    Векторні картинки не залежать від роздільної здатності
+
+                        * * *
+    В папке mipmap находятся зображення іконок.
+        png - файли звичайні картинки,
+        xml - векторні картинки.
+
+                        * * *
+    Добавлено наступні файли:
+        1) drawable/background.jpg вставляється тут вище в рядку : android:background="@drawable/background"
+        2) растові зображення drawable/img_00.xml та ін. вставляються тут, нижче в тегах ImageView.
+    Не відредаговане пояснення від ГПТ, збережено також в "GPT answers.odt"
+    Зображення були створені з допомогою інструментів IDE, описано вище на початку коментаря.
+
+    Фон/Background
+        1) Фон як колір: в ImageView з id = img00
+                android:background="@color/yellow"
+        2) Фон як xml image: в ImageView з id = img01
+                android:background="@drawable/bg_01_circle"
+            Як створити xml: RMB on package drawable>New>"Drawable Resource File">"File name">
+        3) Фон як png image: в ImageView з id = img02
+                android:background="@drawable/bg_red_star2"
+
+                        * * *
+                    android:src та app:srcCompat
+    app:srcCompat викоистовується в ImageView з id = img20
+    GPT{
+        android:src :
+            - Оригінальна властивість з Android SDK.
+            - Працює тільки з Bitmap-зображеннями (PNG, JPG і т. д.).
+            - Не підтримує автоматично Vector Drawable на Android до версії Lollipop (API 21).
+            - Не використовує бібліотеку AppCompat.
+        Якщо використовувати android:src="@drawable/ic_vector" на Android 4.x, отримаєш помилку, бо векторні малюнки тоді ще не підтримувались.
+
+        app:srcCompat
+            - Властивість із бібліотеки підтримки AppCompat (androidx.appcompat.widget.AppCompatImageView).
+            - !!! Рекомендується для використання, особливо якщо працюєш з векторною графікою (.xml файли у папці drawable).
+            - Автоматично забезпечує підтримку векторних малюнків навіть на старих версіях Android (починаючи з API 7).
+
+        Висновок:
+        Властивість     Працює з Vector Drawable        Сумісність з Android < API 21      Рекомендовано
+        android:src	            X                                     X                       No
+        app:srcCompat	        V                                     V                       Yes
+    }
+
+                        * * *
+        В ImageView з id = img01 розмір фона bg_01_circle.xml <size android:height="230dp"
+    android:width="230dp"/> ігнорується, оскільки в <ImageView> прописані розміри:
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+    Однак все зміниться, якщо ці розміри видалить, або замінити на wrap_content. Це демонструється в
+    ImageView з id = img20
+    GPT{            Чому android:size у bg_01_circle.xml не впливає на розмір?
+            Розміри в <shape> — це тільки рекомендація для випадків, коли використовується напряму
+            як окремий елемент (наприклад, в ImageView без вказаних розмірів або в DrawableView).
+            Але якщо shape використовується як фон (background), то він автоматично підлаштовується
+            під розміри того компонента, на який він застосований.
+
+                    Чому зміна layout_width і layout_height у ImageView впливає?
+            У цьому випадку ImageView диктує розміри, і bg_01_circle.xml масштабується до цих розмірів.
+            Тобто: фонова картинка завжди приймає розмір батьківського візуального елемента, якщо немає спеціального wrap_content.
+
+                    Як зробити, щоб shape керував розміром?
+            Ти можеш використати shape всередині Drawable, типу так:
+                <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:background="@drawable/bg_01_circle"/>
+            І тоді вже shape може визначати власні розміри через тег <size>.
+            Але краще за все — завжди задавати розміри у самому View, а shape використовувати лише як графіку.
+    Що задає розмір?	                        Результат
+    layout_width/height у ImageView	            +. Основний розмір, який реально працює
+    <size> всередині shape                      -. Ігнорується, якщо shape — це фон
+    wrap_content + shape зі size	            +. Працює, якщо shape — не фон, або ImageView не має фіксованого розміру
+    }
+
+                        * * *
+                        ImageView з id = img20
+    android:layout_gravity="center" - для центрування ImageView
+    Якщо ImageView займає всю ширину/висоту комірки (match_parent), а зображення має бути всередині
+    центру — тоді можна використати scaleType:
+        android:scaleType="centerInside"
+    -->
+
+    <!-- GridLayout із 3 колонками i 6 рядками -->
+    <GridLayout
+        android:id="@+id/gridLayoutIndex"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:columnCount="3"
+        android:rowCount="6"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.03"
+        android:layout_marginTop="10dp">
+
+        <ImageView
+            android:id="@+id/img00"
+            android:background="@color/yellow"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_row="0"
+            android:layout_column="0"
+            android:contentDescription="@string/app_name"
+            android:src="@drawable/img_00" />
+
+        <TextView
+            android:id="@+id/text10UnderImg00"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_row="1"
+            android:layout_column="0"
+            android:padding="8dp"
+            android:text="Img_00 Text_10"
+            android:textColor="#000000"
+            android:textSize="16sp" />
+
+        <ImageView
+            android:id="@+id/img01"
+            android:background="@drawable/bg_01_circle"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_row="0"
+            android:layout_column="1"
+            android:contentDescription="@string/app_name"
+            android:src="@drawable/img_01" />
+
+        <TextView
+            android:id="@+id/text11UnderImg01"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_row="1"
+            android:layout_column="1"
+            android:padding="8dp"
+            android:text="Img_01 Text_11"
+            android:textColor="#000000"
+            android:textSize="16sp" />
+
+        <ImageView
+            android:id="@+id/img02"
+            android:background="@drawable/bg_red_star2"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_row="0"
+            android:layout_column="2"
+            android:contentDescription="@string/app_name"
+            android:src="@drawable/img_02" />
+
+        <TextView
+            android:id="@+id/text12UnderImg02"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_row="1"
+            android:layout_column="2"
+            android:padding="8dp"
+            android:text="Img_02 Text_12"
+            android:textColor="#000000"
+            android:textSize="16sp" />
+
+        <ImageView
+            android:id="@+id/img20"
+            android:background="@drawable/bg_02_rectangle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_row="2"
+            android:layout_column="0"
+            android:layout_gravity="center"
+            android:scaleType="centerInside"
+            android:contentDescription="@string/app_name"
+            app:srcCompat="@drawable/img_20" />
+
+        <TextView
+            android:id="@+id/text30UnderImg20"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_row="3"
+            android:layout_column="0"
+            android:padding="8dp"
+            android:text="Img_20 Text_30"
+            android:textColor="#000000"
+            android:textSize="16sp" />
+
+        <ImageView
+            android:id="@+id/img21"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_row="2"
+            android:layout_column="1"
+            android:contentDescription="@string/app_name"
+            android:src="@drawable/img_21" />
+
+        <TextView
+            android:id="@+id/text31UnderImg21"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_row="3"
+            android:layout_column="1"
+            android:padding="8dp"
+            android:text="Img_21 Text_31"
+            android:textColor="#000000"
+            android:textSize="16sp" />
+
+        <ImageView
+            android:id="@+id/img22"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_row="2"
+            android:layout_column="2"
+            android:contentDescription="@string/app_name"
+            android:src="@drawable/img_22" />
+
+        <TextView
+            android:id="@+id/text32UnderImg22"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_row="3"
+            android:layout_column="2"
+            android:padding="8dp"
+            android:text="Img_22 Text_32"
+            android:textColor="#000000"
+            android:textSize="16sp" />
+
+        <ImageView
+            android:id="@+id/img40"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_row="4"
+            android:layout_column="0"
+            android:contentDescription="@string/app_name"
+            android:src="@drawable/img_40" />
+
+        <TextView
+            android:id="@+id/text50UnderImg40"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_row="5"
+            android:layout_column="0"
+            android:padding="8dp"
+            android:text="Img_40 Text_50"
+            android:textColor="#000000"
+            android:textSize="16sp" />
+
+        <ImageView
+            android:id="@+id/img41"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_row="4"
+            android:layout_column="1"
+            android:contentDescription="@string/app_name"
+            android:src="@drawable/img_41" />
+
+        <TextView
+            android:id="@+id/text51UnderImg41"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_row="5"
+            android:layout_column="1"
+            android:padding="8dp"
+            android:text="Img_41 Text_51"
+            android:textColor="#000000"
+            android:textSize="16sp" />
+
+        <ImageView
+            android:id="@+id/img42"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_row="4"
+            android:layout_column="2"
+            android:contentDescription="@string/app_name"
+            android:src="@drawable/img_42" />
+
+        <TextView
+            android:id="@+id/text52UnderImg42"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_row="5"
+            android:layout_column="2"
+            android:padding="8dp"
+            android:text="Img_42 Text_52"
+            android:textColor="#000000"
+            android:textSize="16sp" />
+
+    </GridLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
