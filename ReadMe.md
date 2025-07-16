@@ -19,7 +19,10 @@ Summary of Android language
 7) asDemo07ListView :
    Look files: MainActivity.java > activity_main.xml > 
 8) asDemo08RecyclerView :
-   Look files: MainActivity.java > activity_main.xml > RecyclerViewAdapter.java > RecyclerViewItem.java > Utils.java > recycler_view_item.xml
+   Look files: MainActivity.java > activity_main.xml > PizzaRecipeAdapter.java > PizzaRecipeItem.java
+               > RecipeActivity > Utils.java > recycler_view_item.xml > activity_recipe.xml
+9) asDemo09
+
 
 ******
 
@@ -30,6 +33,14 @@ RecyclerView - хранит только те, что на екране + ещё
 
 и CardView
 
+Створити конспект по 
+LinearLayout
+RelativeLayout
+ConstraintLayout
+FrameLayout
+TableLayout
+GridLayout
+Відповідь гпт в GPT answers.odt
 
 
 
