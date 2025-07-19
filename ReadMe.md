@@ -21,8 +21,24 @@ Summary of Android language
 8) asDemo08RecyclerView :
    Look files: MainActivity.java > activity_main.xml > PizzaRecipeAdapter.java > PizzaRecipeItem.java
                > RecipeActivity > Utils.java > recycler_view_item.xml > activity_recipe.xml
-9) asDemo09
 
+| Спосіб збереження даних | Тип збережених даних                              | Час зберігання даних               | Проект                       |
+|--------------------------|---------------------------------------------------|-------------------------------------|------------------------------|
+| onSaveInstanceState()    | Пари ключ/значення (складні дані)                 | Під час роботи програми            | asDemo09ActivityLifeCycle    |
+| SharedPreferences        | Пари ключ/значення (примітивні дані)              | Поки програма не видалена          | asDemo10SharedPreferences    |
+| SQLite database          | Організовані у структури складні дані             | Поки програма не видалена          |                              |
+| Internal storage         | Мультимедійні або великі за обсягом дані          | Поки програма не видалена          |                              |
+| External storage         | Мультимедійні або великі за обсягом дані          | Поки програма або дані не видалені |                              |
+| Server                   | Дані, до яких можливий доступ із різних пристроїв | Поки дані не видалені              |                              |
+
+9) asDemo09ActivityLifeCycle
+   Look files: MainActivity.java > activity_main.xml  
+10) asDemo10SharedPreferences
+    Look files: MainActivity.java > activity_main.xml
+10) asDemo11Timer
+    Look files: MainActivity.java
+10) asDemo12Timer
+    Look files: MainActivity.java > activity_main.xml
 
 ******
 
