@@ -22,14 +22,14 @@ Summary of Android language
    Look files: MainActivity.java > activity_main.xml > PizzaRecipeAdapter.java > PizzaRecipeItem.java
                > RecipeActivity > Utils.java > recycler_view_item.xml > activity_recipe.xml
 
-| Спосіб збереження даних | Тип збережених даних                              | Час зберігання даних               | Проект                       |
-|--------------------------|---------------------------------------------------|-------------------------------------|------------------------------|
-| onSaveInstanceState()    | Пари ключ/значення (складні дані)                 | Під час роботи програми            | asDemo09ActivityLifeCycle    |
-| SharedPreferences        | Пари ключ/значення (примітивні дані)              | Поки програма не видалена          | asDemo10SharedPreferences    |
-| SQLite database          | Організовані у структури складні дані             | Поки програма не видалена          |                              |
-| Internal storage         | Мультимедійні або великі за обсягом дані          | Поки програма не видалена          |                              |
-| External storage         | Мультимедійні або великі за обсягом дані          | Поки програма або дані не видалені |                              |
-| Server                   | Дані, до яких можливий доступ із різних пристроїв | Поки дані не видалені              |                              |
+| Спосіб збереження даних | Тип збережених даних                              | Час зберігання даних               | Проект                      |
+|--------------------------|---------------------------------------------------|-------------------------------------|-----------------------------|
+| onSaveInstanceState()    | Пари ключ/значення (складні дані)                 | Під час роботи програми            | asDemo09ActivityLifeCycle   |
+| SharedPreferences        | Пари ключ/значення (примітивні дані)              | Поки програма не видалена          | asDemo10SharedPreferences, asDemo12Timer |
+| SQLite database          | Організовані у структури складні дані             | Поки програма не видалена          |                             |
+| Internal storage         | Мультимедійні або великі за обсягом дані          | Поки програма не видалена          |                             |
+| External storage         | Мультимедійні або великі за обсягом дані          | Поки програма або дані не видалені |                             |
+| Server                   | Дані, до яких можливий доступ із різних пристроїв | Поки дані не видалені              |                             |
 
 9) asDemo09ActivityLifeCycle
    Look files: MainActivity.java > activity_main.xml  
@@ -38,16 +38,33 @@ Summary of Android language
 10) asDemo11Timer
     Look files: MainActivity.java
 10) asDemo12Timer
-    Look files: MainActivity.java > activity_main.xml
+    Look files: MainActivity.java > activity_main.xml > activity_settings.xml > timer_menu.xml > arrays.xml > timer_preferences.xml > AndroidManifest.xml
+    AboutActivity.java > SettingsActivity.java > SettingsFragment.java
 
 ******
 
-ListView - хранит все элементы в памяти. Поэтому, если есть видео, фото - большой расход памяти
-RecyclerView - хранит только те, что на екране + ещё парочку, но имплементация сложнее. Нужно будет добавить депенденси.
+Beginner's Guide to Android App Development
+https://www.youtube.com/playlist?list=PLjTiv7h4trxNaeE0baM7NjIAI8T-J-5W_
+32 video
 
-Библиотеки добавляются в build.gradle.kts (Module:app)
+Kotlin For Beginners 2022
+https://www.youtube.com/playlist?list=PLjTiv7h4trxPBJT7tI8BeMnLAT35RwKx2
+27 video
 
-и CardView
+Settings
+https://developer.android.com/develop/ui/views/components/settings
+AndroidX overview
+https://developer.android.com/jetpack/androidx
+PreferenceFragmentCompat
+https://developer.android.com/reference/androidx/preference/PreferenceFragmentCompat
+androidx.fragment.app
+https://developer.android.com/reference/androidx/fragment/app/package-summary
+androidx.preference
+https://developer.android.com/reference/androidx/preference/package-summary
+Fragments
+https://developer.android.com/guide/fragments
+
+
 
 Створити конспект по 
 LinearLayout
@@ -56,7 +73,7 @@ ConstraintLayout
 FrameLayout
 TableLayout
 GridLayout
-Відповідь гпт в GPT answers.odt
+В GPT answers.odt теж може бути інформація по ...Layout-ам.
 
 
 

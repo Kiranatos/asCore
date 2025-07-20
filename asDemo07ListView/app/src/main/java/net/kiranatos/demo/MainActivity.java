@@ -12,6 +12,11 @@ import android.widget.Toast;
 
 import java.util.ArrayList;
 
+/*
+ListView - хранит все элементы в памяти. Поэтому, если есть видео, фото - большой расход памяти
+RecyclerView - хранит только те, что на екране + ещё парочку, но имплементация сложнее. Нужно будет добавить депенденси.
+CardView - ????
+*/
 public class MainActivity extends AppCompatActivity {
 
     @Override
