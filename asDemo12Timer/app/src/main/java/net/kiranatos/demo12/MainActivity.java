@@ -19,7 +19,12 @@ import android.view.MenuItem;
 В SettingsFragment.java не знаходило класс PreferenceFragmentCompat, довелось додати в build.gradle.kts
 в dependencies: implementation("androidx.preference:preference:1.2.1"), а в SettingsFragment.java -
 import androidx.preference.PreferenceFragmentCompat;
- 
+
+ timer_menu.xml - just structure of menu
+ MainActivity.java
+ SettingsActivity.java
+ AboutActivity.java
+ SettingsFragment.java
 */
 public class MainActivity extends AppCompatActivity implements SharedPreferences.OnSharedPreferenceChangeListener {
 

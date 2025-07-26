@@ -10,12 +10,13 @@ Summary of Android language
    Look files: MainActivity.java > activity_main.xml > AndroidManifest.xml
 4) asDemo04Audio :
    Look files: MainActivity.java > activity_main.xml > AndroidManifest.xml
-   В activity_main.xml конспект про векторні зображення.
+   В activity_main.xml конспект про векторні зображення та How to show title of application.
    SeekBar for volume.
 5) asDemo05VectorGraphic :
-   Look files: MainActivity.java > activity_main.xml > img_01.xml, img_20.xml, bg_01_circle.xml, bg_02_rectangle.xml, colors.xml,
+   Look files: MainActivity.java > activity_main.xml > img_01.xml, img_20.xml, bg_01_circle.xml, bg_02_rectangle.xml, colors.xml,   
 6) asDemo06MusicPlayer : Майже те саме що й у asDemo04Audio, тільки SeekBar for duration
    Look files: themes.xml > 
+   How to show title of application (4th variant in themes.xml)
 7) asDemo07ListView :
    Look files: MainActivity.java > activity_main.xml > 
 8) asDemo08RecyclerView :
