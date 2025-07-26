@@ -36,11 +36,13 @@ Summary of Android language
    Look files: MainActivity.java > activity_main.xml  
 10) asDemo10SharedPreferences
     Look files: MainActivity.java > activity_main.xml
-10) asDemo11Timer
+11) asDemo11Timer
     Look files: MainActivity.java
-10) asDemo12Timer
+12) asDemo12Timer
     Look files: MainActivity.java > activity_main.xml > activity_settings.xml > timer_menu.xml > arrays.xml > timer_preferences.xml > AndroidManifest.xml
     AboutActivity.java > SettingsActivity.java > SettingsFragment.java
+    Fragments
+13) 
 
 ******
 

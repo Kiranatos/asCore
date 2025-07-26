@@ -2,19 +2,17 @@
 <resources>
 
     <array name="pref_timer_melody_labels">
-
         <item>Bell</item>
         <item>Alarm Siren</item>
         <item>Bip</item>
-
     </array>
 
     <array name="pref_timer_melody_values">
-
         <item>bell</item>
         <item>alarm_siren</item>
         <item>bip</item>
-
     </array>
+
+    <!-- Порядок елементів двох масивів, має бути однаковий   -->
 
 </resources>

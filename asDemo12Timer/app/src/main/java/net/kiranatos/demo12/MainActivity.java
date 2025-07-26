@@ -20,6 +20,9 @@ import android.view.MenuItem;
 в dependencies: implementation("androidx.preference:preference:1.2.1"), а в SettingsFragment.java -
 import androidx.preference.PreferenceFragmentCompat;
 
+Не відображався заголовок як у відео, тому не відображались запрограмовані кнопки.
+Використав 4th variant описаний в asDemo06MusicPlayer/app/src/main/res/values/themes.xml
+
  timer_menu.xml - just structure of menu
  MainActivity.java
  SettingsActivity.java
@@ -82,22 +85,23 @@ public class MainActivity extends AppCompatActivity implements SharedPreferences
 
                 @Override
                 public void onFinish() {
+                    /* отримує дані настроєк з SettingsFragment.java > timer_preferences.xml і реалізує логіку їх роботи: звук, мелодія, діапазон */
                     SharedPreferences sharedPreferences =
                             PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
-                    if (sharedPreferences.getBoolean("enable_sound", true)) {
+                    if (sharedPreferences.getBoolean("enable_sound", true)) { // key from timer_preferences.xml
 
-                        String melodyName = sharedPreferences.getString("timer_melody", "bell");
+                        String melodyName = sharedPreferences.getString("timer_melody", "bell"); // key from timer_preferences.xml + arrays.xml
                         if (melodyName.equals("bell")) {
                             MediaPlayer mediaPlayer = MediaPlayer.create(getApplicationContext(),
-                                    R.raw.bell_sound);
+                                    R.raw.bell_sound); // file in raw folder
                             mediaPlayer.start();
                         } else if (melodyName.equals("alarm_siren")) {
                             MediaPlayer mediaPlayer = MediaPlayer.create(getApplicationContext(),
-                                    R.raw.alarm_siren_sound);
+                                    R.raw.alarm_siren_sound); // file in raw folder
                             mediaPlayer.start();
                         } else if (melodyName.equals("bip")) {
                             MediaPlayer mediaPlayer = MediaPlayer.create(getApplicationContext(),
-                                    R.raw.bip_sound);
+                                    R.raw.bip_sound); // file in raw folder
                             mediaPlayer.start();
                         }
                     }
@@ -151,14 +155,17 @@ public class MainActivity extends AppCompatActivity implements SharedPreferences
     }
 
     @Override
-    public boolean onOptionsItemSelected(MenuItem item) { // при натисканні на пункт меню
+    public boolean onOptionsItemSelected(MenuItem item) { /* при натисканні на пунктах(піктограми і текстові) меню заголовка.
+    Створюються активності: SettingsActivity, AboutActivity.
+    Активність для текстового меню Purchase не реалізована.
+    Звернуть увагу також на написане в AndroidManifest.xml, воно має вплив тут */
         int id = item.getItemId();
-        if (id == R.id.action_settings) { // id in timer_menu.xml
+        if (id == R.id.action_settings) { // id in timer_menu.xml, піктограмма коліщатка
             Intent openSettings =
                     new Intent(this, SettingsActivity.class);
             startActivity(openSettings);
             return true;
-        } else if (id == R.id.action_about) { // id in timer_menu.xml
+        } else if (id == R.id.action_about) { // id in timer_menu.xml, піктограмма діалога
             Intent openAbout =
                     new Intent(this, AboutActivity.class);
             startActivity(openAbout);

@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Demo 12 Timer</string>
+    <string name="app_name_label">Demo 12 Timer Label</string>
 </resources>

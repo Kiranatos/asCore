@@ -14,14 +14,14 @@ public class AboutActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_about);
 
-        ActionBar actionBar = this.getSupportActionBar(); // те саме що й в SettingsActivity
+        ActionBar actionBar = this.getSupportActionBar(); // те саме що й в SettingsActivity, look there
         if (actionBar != null) {
             actionBar.setDisplayHomeAsUpEnabled(true);
         }
     }
 
     @Override
-    public boolean onOptionsItemSelected(MenuItem item) { // те саме що й в SettingsActivity
+    public boolean onOptionsItemSelected(MenuItem item) { // те саме що й в SettingsActivity, look there
         int id = item.getItemId();
         if (id == android.R.id.home) {
             NavUtils.navigateUpFromSameTask(this);

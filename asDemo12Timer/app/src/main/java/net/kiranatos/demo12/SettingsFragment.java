@@ -11,11 +11,11 @@ import androidx.preference.CheckBoxPreference;
 import androidx.preference.EditTextPreference;
 import androidx.preference.ListPreference;
 
-public class SettingsFragment extends PreferenceFragmentCompat
+public class SettingsFragment extends PreferenceFragmentCompat // need to add dependency in build.gradle.kts
         implements SharedPreferences.OnSharedPreferenceChangeListener, Preference.OnPreferenceChangeListener {
     @Override
     public void onCreatePreferences(Bundle bundle, String s) {
-        addPreferencesFromResource(R.xml.timer_preferences);
+        addPreferencesFromResource(R.xml.timer_preferences); // xml
 
         SharedPreferences sharedPreferences = getPreferenceScreen()
                 .getSharedPreferences();

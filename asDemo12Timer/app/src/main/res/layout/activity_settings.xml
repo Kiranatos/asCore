@@ -7,3 +7,9 @@
     android:layout_height="match_parent" >
 
 </fragment>
+
+<!-- Вместо ConstraintLayout пишем fragment
+Connection:
+SettingsActivity.java > activity_settings.xml >
+SettingsFragment.java > timer_preferences.xml > MainActivity.java
+-->
