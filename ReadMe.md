@@ -41,10 +41,12 @@ Summary of Android language
 12) asDemo12Timer
     Look files: MainActivity.java > activity_main.xml > activity_settings.xml > timer_menu.xml > arrays.xml > timer_preferences.xml > AndroidManifest.xml
     AboutActivity.java > SettingsActivity.java > SettingsFragment.java
-    Fragments
+    - Fragments
+    - Різниця між OnSharedPreferenceChangeListener та OnPreferenceChangeListener в класі SettingsFragment (роз'яснення ГПТ внизу)
 13) 
 
 ******
+Log.d("[class Name:", " value =  " + value);
 
 Beginner's Guide to Android App Development
 https://www.youtube.com/playlist?list=PLjTiv7h4trxNaeE0baM7NjIAI8T-J-5W_

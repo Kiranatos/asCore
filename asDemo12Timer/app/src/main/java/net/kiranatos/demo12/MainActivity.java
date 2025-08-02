@@ -29,6 +29,8 @@ import androidx.preference.PreferenceFragmentCompat;
  AboutActivity.java
  SettingsFragment.java
 */
+
+// У мене зявились тут такі питання: чи ре-створюється нова MainActivity і чи OnSharedPreferenceChangeListener дійсно глобальна між двома активностями
 public class MainActivity extends AppCompatActivity implements SharedPreferences.OnSharedPreferenceChangeListener {
 
     private SeekBar seekBar;
@@ -139,10 +141,8 @@ public class MainActivity extends AppCompatActivity implements SharedPreferences
 
     private void resetTimer() {
         countDownTimer.cancel();
-        //textView.setText("00:30");
         button.setText("Start");
         seekBar.setEnabled(true);
-        //seekBar.setProgress(30);
         isTimerOn = false;
         setIntervalFromSharedPreferences(sharedPreferences);
     }
@@ -175,14 +175,17 @@ public class MainActivity extends AppCompatActivity implements SharedPreferences
         return super.onOptionsItemSelected(item);
     }
 
+    // Метод для роботи з налаштуванням поле вводу EditTextPreference в timer_preferences.xml
     private void setIntervalFromSharedPreferences(SharedPreferences sharedPreferences) {
-
         defaultInterval = Integer.valueOf(sharedPreferences.getString("default_interval", "30"));
         long defaultIntervalInMillis = defaultInterval * 1000;
         updateTimer(defaultIntervalInMillis);
         seekBar.setProgress(defaultInterval);
     }
 
+    /* GPT { Чому onSharedPreferenceChanged у MainActivity спрацьовує, хоча значення змінюється у SettingsActivity?
+    ✅ Тому що обидві активності працюють з одним і тим самим файлом SharedPreferences, і слухач в MainActivity
+    був зареєстрований, тому він отримує всі зміни в режимі реального часу, навіть якщо зміна сталася у зовсім іншій активності. } */
     @Override
     public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String key) {
         if (key.equals("default_interval")) {
